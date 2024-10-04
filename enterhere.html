@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giveaway Entry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        #entryForm, #checkoutForm {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function showEntryForm() {
+            document.getElementById('entryForm').style.display = 'block';
+        }
+
+        function showCheckoutForm() {
+            document.getElementById('checkoutForm').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Giveaway!</h1>
+    <button onclick="showEntryForm()">Enter Here</button>
+
+    <div id="entryForm">
+        <h2>Giveaway Entry Form</h2>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <button type="button" onclick="showCheckoutForm()">Submit</button>
+        </form>
+    </div>
+
+    <div id="checkoutForm">
+        <h2>Checkout Form</h2>
+        <p>Please pay a small shipping fee of $5 to receive your prize.</p>
+        <form>
+            <label for="address">Shipping Address:</label><br>
+            <input type="text" id="address" name="address" required><br><br>
+            <label for="payment">Payment Method:</label><br>
+            <select id="payment" name="payment">
+                <option value="credit-card">Credit Card</option>
+            </select><br><br>
+            <button type="submit">Pay Shipping Fee</button>
+        </form>
+    </div>
+</body>
+</html>
