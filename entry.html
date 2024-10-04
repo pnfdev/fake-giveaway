@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giveaway Entry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        #entryForm {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 300px;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function showEntryForm() {
+            document.getElementById('entryForm').style.display = 'block';
+        }
+
+        function submitEntry() {
+            // Here you can add code to handle form submission,
+            // like sending the data to a server or displaying a confirmation.
+            alert('Entry submitted! Thank you for participating!');
+            document.getElementById('entryForm').reset(); // Reset the form after submission
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Giveaway!</h1>
+    <button onclick="showEntryForm()">Enter Here</button>
+
+    <div id="entryForm">
+        <h2>Giveaway Entry Form</h2>
+        <form onsubmit="event.preventDefault(); submitEntry();">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" required><br>
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" name="address" required><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
